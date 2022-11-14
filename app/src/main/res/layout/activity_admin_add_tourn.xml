@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+
+    >
+<!--    tools:context=".AdminAddTourn"-->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+        <TextView
+            android:id="@+id/tvTournName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="ADD Tournament"
+            android:backgroundTint="#2196F3"
+            android:textSize="20dp"
+            android:textColor="@color/white"
+            android:background="@color/black"
+            android:gravity="center"
+            />
+
+
+        <EditText
+            android:id="@+id/etTournNameAdd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="top"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:hint="Name"
+            android:scrollbars="vertical"
+            android:textSize="15dp" />
+
+
+        <Spinner
+            android:id="@+id/spinnerCategoriesAdd"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            />
+
+        <Spinner
+            android:id="@+id/spinnerDifficultyAdd"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            />
+
+        <EditText
+            android:id="@+id/etTournStartDateAdd"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:hint="Start Date"
+            android:textSize="15dp"
+            android:gravity="top"
+            android:scrollbars="vertical"
+            android:editable="false"
+            />
+
+        <EditText
+            android:id="@+id/etTournEndDateAdd"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:hint="End Date"
+            android:textSize="15dp"
+            android:gravity="top"
+            android:scrollbars="vertical"
+            android:editable="false"
+            />
+
+        <EditText
+            android:id="@+id/etTournQuestionsAdd"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:hint="Questions"
+            android:textSize="15dp"
+            android:gravity="top"
+            android:scrollbars="vertical"
+            android:editable="false"
+            />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="5dp"
+        >
+        <Button
+            android:id="@+id/btnTournAdd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:backgroundTint="#2196F3"
+            android:layout_margin="5dp"
+            android:text="Preview Questions"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:layout_weight="1"/>
+
+        <Button
+            android:id="@+id/btnTournSave"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:backgroundTint="#2196F3"
+            android:layout_margin="5dp"
+            android:text="Add"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:layout_weight="1"/>
+
+        <Button
+            android:id="@+id/btnTournBackAdd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:backgroundTint="#2196F3"
+            android:layout_margin="5dp"
+            android:text="back"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:layout_weight="1"/>
+
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/rvTournAdd"
+
+        />
+
+
+
+</LinearLayout>

@@ -1,3 +1,46 @@
 <resources>
     <string name="app_name">Assignment3MiniProj</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">"Welcome !"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
+    
+    <string-array name="categories">
+        <item>9 General Knowledge</item>
+        <item>10 Entertainment:Books</item>
+        <item>11 Entertainment:Film</item>
+        <item>12 Entertainment:Music</item>
+        <item>13 Entertainment:Musicals and Theatres</item>
+        <item>14 Entertainment:Television</item>
+        <item>15 Entertainment:VideoGames</item>
+        <item>16 Entertainment:BoardGames</item>
+        <item>17 Science and Nature</item>
+        <item>18 Science:Computers</item>
+        <item>19 Science:Mathematics</item>
+        <item>20 Mythology</item>
+        <item>21 Sports</item>
+        <item>22 Geography</item>
+        <item>23 History</item>
+        <item>24 Politics</item>
+        <item>25 Art</item>
+        <item>26 Celebrities</item>
+        <item>27 Animals</item>
+        <item>28 Vehicles</item>
+        <item>29 Entertainment:Comics</item>
+        <item>30 Science:Gadgets</item>
+        <item>31 Entertainment:JapaneseAnime and Manga</item>
+        <item>32 Entertainment:Cartoon and Animations</item>
+    </string-array>
+
+    <string-array name="difficulty">
+        <item>easy</item>
+        <item>medium</item>
+        <item>hard</item>
+    </string-array>
+
 </resources>
