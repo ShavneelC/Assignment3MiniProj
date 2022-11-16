@@ -1,6 +1,8 @@
 package com.example.assignment3miniproj.Models;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Tournament {
     String name, Category, Difficulty, endDate, startDate;

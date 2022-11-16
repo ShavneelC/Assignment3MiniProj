@@ -43,6 +43,7 @@ public class TournAddAdapter extends RecyclerView.Adapter<TournAddAdapter.holder
         holder.answer.setText(quizList.get(position).getCorrect_answer());
 
 
+
     }
 
     @Override

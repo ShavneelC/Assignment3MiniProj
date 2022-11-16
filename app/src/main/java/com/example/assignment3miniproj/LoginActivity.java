@@ -44,6 +44,7 @@ public class LoginActivity extends AppCompatActivity {
         loginbtn = findViewById(R.id.btnLogin);
         regtv = findViewById(R.id.tvRegisterHerelog);
 
+
         mAuth= FirebaseAuth.getInstance();
         fd = FirebaseDatabase.getInstance();
 
@@ -51,6 +52,7 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 loginUser();
+
             }
         });
 
@@ -84,14 +86,18 @@ public class LoginActivity extends AppCompatActivity {
                         
 //                        Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
 //                        startActivity(intent);
+
                     }
                     else{
                             Toast.makeText(LoginActivity.this, "Login Error: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                         //startActivity(new Intent(LoginActivity.this, MainActivity.class));
                         }
                 }
+
             });
+
         }
+
     }
 
     private void checkUserAccessLevel(String uid) {
@@ -108,13 +114,17 @@ public class LoginActivity extends AppCompatActivity {
                     finish();
                 } else{
                     startActivity(new Intent(LoginActivity.this, HomeActivity.class));
+
                 }
+
             }
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
 
             }
         });
+
     }
+
 
 }

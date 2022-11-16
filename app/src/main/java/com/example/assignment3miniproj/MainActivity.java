@@ -37,12 +37,7 @@ public class MainActivity extends AppCompatActivity {
         fd = FirebaseDatabase.getInstance();
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.main_menu, menu);
-        return true;
-    }
+
 
     @Override
     protected void onStart() {

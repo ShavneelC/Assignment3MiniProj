@@ -35,6 +35,8 @@ import com.example.assignment3miniproj.RVAdapters.TournAddAdapter;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -59,8 +61,9 @@ public class AdminAddTourn extends AppCompatActivity implements AdapterView.OnIt
     DatePickerDialog.OnDateSetListener setListener2;
     Spinner spinnerCategories, spinnerDifficulty;
     RequestQueue mQueue;
-    ArrayList<Quiz> quizList;
+    ArrayList<Quiz> quizList, fbList;
     RecyclerView rv;
+    FirebaseFirestore db;
 
 
 
@@ -77,11 +80,13 @@ public class AdminAddTourn extends AppCompatActivity implements AdapterView.OnIt
         save = findViewById(R.id.btnTournSave);
         spinnerCategories = findViewById(R.id.spinnerCategoriesAdd);
         spinnerDifficulty = findViewById(R.id.spinnerDifficultyAdd);
+        db = FirebaseFirestore.getInstance();
 
 
         //Volley
         mQueue = Volley.newRequestQueue(this);
         quizList = new ArrayList<>();
+        fbList = new ArrayList<>();
 
         //recyclerview
         rv = findViewById(R.id.rvTournAdd);
@@ -183,25 +188,45 @@ public class AdminAddTourn extends AppCompatActivity implements AdapterView.OnIt
         map.put("Difficulty", difficulty);
         map.put("Quiz", quizList);
 
-        FirebaseDatabase.getInstance().getReference().child("Tournament").push()
-                .setValue(map)
-                .addOnSuccessListener(new OnSuccessListener<Void>() {
-                    @Override
-                    public void onSuccess(Void unused) {
-                        tournname.setText("");
-                        startDate.setText("");
-                        endDate.setText("");
-                        Toast.makeText(getApplicationContext(),"Tournament has been added",Toast.LENGTH_SHORT).show();
 
-                    }
-                }
-                )
-                .addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-                        Toast.makeText(getApplicationContext(),"Failed",Toast.LENGTH_SHORT).show();
-                    }
-                });
+        db.collection("Tournament")
+                        .add(map)
+                                .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+                                    @Override
+                                    public void onSuccess(DocumentReference documentReference) {
+                                        tournname.setText("");
+                                        startDate.setText("");
+                                        endDate.setText("");
+                                        Toast.makeText(getApplicationContext(),"Tournament has been added",Toast.LENGTH_SHORT).show();
+                                    }
+                                })
+                                .addOnFailureListener(new OnFailureListener() {
+                                        @Override
+                                        public void onFailure(@NonNull Exception e) {
+                                            Toast.makeText(getApplicationContext(),"Failed",Toast.LENGTH_SHORT).show();
+                                        }
+                                });
+
+
+//        FirebaseDatabase.getInstance().getReference().child("Tournament").push()
+//                .setValue(map)
+//                .addOnSuccessListener(new OnSuccessListener<Void>() {
+//                    @Override
+//                    public void onSuccess(Void unused) {
+//                        tournname.setText("");
+//                        startDate.setText("");
+//                        endDate.setText("");
+//                        Toast.makeText(getApplicationContext(),"Tournament has been added",Toast.LENGTH_SHORT).show();
+//
+//                    }
+//                }
+//                )
+//                .addOnFailureListener(new OnFailureListener() {
+//                    @Override
+//                    public void onFailure(@NonNull Exception e) {
+//                        Toast.makeText(getApplicationContext(),"Failed",Toast.LENGTH_SHORT).show();
+//                    }
+//                });
 
     }
 

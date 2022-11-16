@@ -48,6 +48,7 @@ public class TourViewAdapter extends FirebaseRecyclerAdapter<Tournament, TourVie
         holder.startDate.setText(Tournament.getStartDate());
         holder.endDate.setText(Tournament.getEndDate());
 
+
         holder.edit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
